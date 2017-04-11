@@ -20,6 +20,7 @@
         android:id="@+id/right_body_parts_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
         android:layout_marginLeft="16dp"
         android:text="@string/right_body_parts_1"
         android:textAppearance="?android:textAppearanceMedium" />
@@ -28,6 +29,7 @@
         android:id="@+id/right_body_parts_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
         android:layout_marginLeft="16dp"
         android:text="@string/right_body_parts_2"
         android:textAppearance="?android:textAppearanceMedium" />
@@ -36,6 +38,7 @@
         android:id="@+id/wrong_body_parts_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
         android:layout_marginLeft="16dp"
         android:text="@string/wrong_body_parts_1"
         android:textAppearance="?android:textAppearanceMedium" />
@@ -44,6 +47,7 @@
         android:id="@+id/wrong_body_parts_answer_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
         android:layout_marginLeft="16dp"
         android:text="@string/wrong_body_parts_2"
         android:textAppearance="?android:textAppearanceMedium" />
@@ -55,27 +59,26 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="18dp"
             android:layout_weight="1"
+            android:onClick="answerQuestionBodyParts"
             android:text="@string/submit_answer"
-            android:textAllCaps="true"
-            android:onClick="answerQuestionBodyParts"/>
+            android:textAllCaps="true" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="18dp"
             android:layout_weight="1"
+            android:onClick="goToEnd"
             android:text="@string/skip_question"
-            android:textAllCaps="true"
-            android:onClick="goToEnd"/>
+            android:textAllCaps="true" />
     </LinearLayout>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:src="@drawable/bee_head"
-        />
+        android:src="@drawable/bee_head" />
 
 </LinearLayout>

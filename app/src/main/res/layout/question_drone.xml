@@ -33,18 +33,18 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:layout_weight="1"
+            android:onClick="answerQuestionDrone"
             android:text="@string/submit_answer"
-            android:textAllCaps="true"
-            android:onClick="answerQuestionDrone"/>
+            android:textAllCaps="true" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:layout_weight="1"
+            android:onClick="goToQuestionLinden"
             android:text="@string/skip_question"
-            android:textAllCaps="true"
-            android:onClick="goToQuestionLinden"/>
+            android:textAllCaps="true" />
     </LinearLayout>
 
     <ImageView

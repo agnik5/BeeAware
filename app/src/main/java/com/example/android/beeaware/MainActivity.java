@@ -12,6 +12,9 @@ import static com.example.android.beeaware.R.id.linden_radio_button;
 import static com.example.android.beeaware.R.id.right_body_parts_1;
 import static com.example.android.beeaware.R.id.right_body_parts_2;
 
+/**
+ * This app is a quiz about bees using EditText, RadioButton, CheckBox
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -20,69 +23,113 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.start);
     }
 
-    // This method starts the quiz and renders question_worker.xml
+    /**
+     * This method starts the quiz and renders question_worker.xml.
+     * This method is called when 'Start Quiz' button is clicked.
+     */
     public void startQuiz(View view) {
         setContentView(R.layout.question_worker);
     }
 
+    /**
+     * This method checks answer for question_worker and renders question_queen.xml
+     * This method is called when 'Submit Answer' button is clicked.
+     */
     public void answerQuestionWorker(View view) {
+        //Find proper EditText by its ID and get the answer as String
         EditText workerField = (EditText) findViewById(R.id.worker_field);
         String worker = workerField.getText().toString();
+        //Check if answer is correct.
         if (worker.equalsIgnoreCase("worker")) {
+            //Display proper Toast and render xml for next question if answer is correct.
             Toast.makeText(this, getString(R.string.right_answer_confirmation), Toast.LENGTH_SHORT).show();
-//            try {
-//                Thread.sleep(2000);
-//            } catch (InterruptedException ex) {
-//            };
             setContentView(R.layout.question_queen);
         } else {
+            //Display proper Toast if answer is incorrect.
             Toast.makeText(this, getString(R.string.wrong_answer_confirmation), Toast.LENGTH_SHORT).show();
         }
     }
 
+    /**
+     * This method checks answer for question_queen and renders question_drone.xml
+     * This method is called when 'Submit Answer' button is clicked.
+     */
     public void answerQuestionQueen(View view) {
+        //Find proper EditText by its ID and get the answer as String
         EditText queenField = (EditText) findViewById(R.id.queen_field);
         String queen = queenField.getText().toString();
+        //Check if answer is correct.
         if (queen.equalsIgnoreCase("queen")) {
+            //Display proper Toast and render xml for next question if answer is correct.
             Toast.makeText(this, getString(R.string.right_answer_confirmation), Toast.LENGTH_SHORT).show();
             setContentView(R.layout.question_drone);
         } else {
+            //Display proper Toast if answer is incorrect.
             Toast.makeText(this, getString(R.string.wrong_answer_confirmation), Toast.LENGTH_SHORT).show();
         }
     }
 
+    /**
+     * This method checks answer for question_drone and renders question_linden.xml
+     * This method is called when 'Submit Answer' button is clicked.
+     */
     public void answerQuestionDrone(View view) {
+        //Find proper EditText by its ID and get the answer as String
         EditText droneField = (EditText) findViewById(R.id.drone_field);
         String drone = droneField.getText().toString();
+        //Check if answer is correct.
         if (drone.equalsIgnoreCase("drone")) {
+            //Display proper Toast and render xml for next question if answer is correct.
             Toast.makeText(this, getString(R.string.right_answer_confirmation), Toast.LENGTH_SHORT).show();
             setContentView(R.layout.question_linden);
         } else {
+            //Display proper Toast if answer is incorrect.
             Toast.makeText(this, getString(R.string.wrong_answer_confirmation), Toast.LENGTH_SHORT).show();
         }
     }
 
+
+    /**
+     * This method checks answer for question_linden and renders question_body_parts.xml
+     * This method is called when 'Submit Answer' button is clicked.
+     */
     public void answerQuestionLinden(View view) {
+        //Find proper RadioButton by its ID
         RadioButton lindenRadioButton = (RadioButton) findViewById(linden_radio_button);
+        //Find out if user chose the right answer by checking this RadioButton
         if (lindenRadioButton.isChecked()) {
+            //Display proper Toast and render xml for next question if answer is correct.
             Toast.makeText(this, getString(R.string.right_answer_confirmation), Toast.LENGTH_SHORT).show();
             setContentView(R.layout.question_body_parts);
         } else {
+            //Display proper Toast if answer is incorrect.
             Toast.makeText(this, getString(R.string.wrong_answer_confirmation), Toast.LENGTH_SHORT).show();
         }
     }
 
+
+    /**
+     * This method checks answer for question_body_parts and renders end.xml
+     * This method is called when 'Submit Answer' button is clicked.
+     */
     public void answerQuestionBodyParts(View view) {
+        //Find proper CheckBoxes by their IDs
         CheckBox rightBodyPartsCheckBox1 = (CheckBox) findViewById(right_body_parts_1);
         CheckBox rightBodyPartsCheckBox2 = (CheckBox) findViewById(right_body_parts_2);
+        //Find out if user chose the right answer by checking those CheckBoxes
         if (rightBodyPartsCheckBox1.isChecked() && rightBodyPartsCheckBox2.isChecked()) {
+            //Display proper Toast and render next xml.
             Toast.makeText(this, getString(R.string.right_answer_confirmation), Toast.LENGTH_SHORT).show();
             setContentView(R.layout.end);
         } else {
+            //Display proper Toast if answer is incorrect.
             Toast.makeText(this, getString(R.string.wrong_answer_confirmation), Toast.LENGTH_SHORT).show();
         }
     }
 
+    /**
+     * These methods render xml file for next question when 'Skip question' button is clicked.
+     */
     public void goToQuestionQueen(View view) {
         setContentView(R.layout.question_queen);
     }
