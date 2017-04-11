@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Bee Aware</string>
+    <string name="start_quiz">Start Quiz</string>
+    <string name="skip_question">Skip Question</string>
+    <string name="type_answer">Type your answer here</string>
+    <string name="submit_answer">Submit Answer</string>
+    <string name="right_answer_confirmation">Right answer!</string>
+    <string name="wrong_answer_confirmation">Try again</string>
+    <string name="about_bees">Bees are very beneficial insects. These hard-working creatures produce honey, propolis etc. which have therapeutic effect. There even is a branch of medicine called apitherapy. They are crucial for humankind existence as they pollinate the plants. Unfortunately they have been added to endangered species list. \n\nHow much do you know about them?</string>
+    <string name="worker_bee_question">In the picture you can see a female bee, which flies and collects nectar and pollen. She has special pollen baskets on her legs. She also does a lot of activities in the hive. \nHow do we call her?</string>
+    <string name="queen_bee_question">This is a special female bee, only one for each family / hive. She is bigger that other bees and the only one to lay eggs. She also lives the longest. \nHow do we call her?</string>
+    <string name="drone_bee_question">He is the male bee. He does&#8230; well, almost nothing. His only aim is to take a mating flight and conceive the queen. His fate is quite tragic - his life is short, he dies after queen\'s conception or after being expelled from the hive. \nHow do we call him...?</string>
+    <string name="linden_question">In the picture you can see one of the honey plants, which means plants that bees collect nectar and pollen from. Honey produced from it is recommended i.a. against cold, flu, fever. What plant is it?</string>
+    <string name="acacia">acacia</string>
+    <string name="linden">linden</string>
+    <string name="birch">birch</string>
+    <string name="hazel">hazel</string>
+    <string name="body_parts_question">What parts of body do bees have? Check all the right answers.</string>
+    <string name="right_body_parts_1">head, 2 pairs of wings</string>
+    <string name="right_body_parts_2">3 pairs of legs, abdomen</string>
+    <string name="wrong_body_parts_1">4 pairs of legs, antennae</string>
+    <string name="wrong_body_parts_2">1 pair of wings, 3 pairs of legs</string>
+    <string name="well_done">Well done! \nCare about our little friends!</string>
+</resources>
