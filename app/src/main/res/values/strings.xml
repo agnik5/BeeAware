@@ -4,8 +4,9 @@
     <string name="skip_question">Skip Question</string>
     <string name="type_answer">Type your answer here</string>
     <string name="submit_answer">Submit Answer</string>
-    <string name="right_answer_confirmation">Right answer!</string>
+    <string name="right_answer_confirmation">Right answer! You earned 1 point!</string>
     <string name="wrong_answer_confirmation">Try again</string>
+    <string name="skip_information">No points earned.</string>
     <string name="about_bees">Bees are very beneficial insects. These hard-working creatures produce honey, propolis etc. which have therapeutic effect. There even is a branch of medicine called apitherapy. They are crucial for humankind existence as they pollinate the plants. Unfortunately they have been added to endangered species list. \nHow much do you know about them?</string>
     <string name="worker_bee_question">In the picture you can see a female bee, which flies and collects nectar and pollen. She has special pollen baskets on her legs. She also does a lot of activities in the hive. \nHow do we call her?</string>
     <string name="queen_bee_question">This is a special female bee, only one for each family / hive. She is bigger than other bees and the only one to lay eggs. She also lives the longest. \nHow do we call her?</string>
@@ -20,5 +21,5 @@
     <string name="right_body_parts_2">3 pairs of legs, abdomen</string>
     <string name="wrong_body_parts_1">4 pairs of legs, antennae</string>
     <string name="wrong_body_parts_2">1 pair of wings, 3 pairs of legs</string>
-    <string name="well_done">Well done! \nCare about our little friends!</string>
+    <string name="well_done">Care about our little friends!</string>
 </resources>

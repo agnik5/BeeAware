@@ -11,11 +11,16 @@ import android.widget.Toast;
 import static com.example.android.beeaware.R.id.linden_radio_button;
 import static com.example.android.beeaware.R.id.right_body_parts_1;
 import static com.example.android.beeaware.R.id.right_body_parts_2;
+import static com.example.android.beeaware.R.id.wrong_body_parts_1;
+import static com.example.android.beeaware.R.id.wrong_body_parts_2;
 
 /**
- * This app is a quiz about bees using EditText, RadioButton, CheckBox
+ * This app is a quiz about bees using EditText, RadioGroup, RadioButton, CheckBox
  */
 public class MainActivity extends AppCompatActivity {
+
+    //This initializes variable to count the score
+    int score = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method checks answer for question_worker and renders question_queen.xml
+     * This method checks answer for question_worker, updates the score and renders question_queen.xml
      * This method is called when 'Submit Answer' button is clicked.
      */
     public void answerQuestionWorker(View view) {
@@ -41,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
         String worker = workerField.getText().toString();
         //Check if answer is correct.
         if (worker.equalsIgnoreCase("worker")) {
-            //Display proper Toast and render xml for next question if answer is correct.
+            //Display proper Toast, update the score and render xml for next question if answer is correct.
+            score +=1;
             Toast.makeText(this, getString(R.string.right_answer_confirmation), Toast.LENGTH_SHORT).show();
             setContentView(R.layout.question_queen);
         } else {
@@ -51,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method checks answer for question_queen and renders question_drone.xml
+     * This method checks answer for question_queen, updates the score and renders question_drone.xml
      * This method is called when 'Submit Answer' button is clicked.
      */
     public void answerQuestionQueen(View view) {
@@ -60,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
         String queen = queenField.getText().toString();
         //Check if answer is correct.
         if (queen.equalsIgnoreCase("queen")) {
-            //Display proper Toast and render xml for next question if answer is correct.
+            //Display proper Toast, update the score and render xml for next question if answer is correct.
+            score +=1;
             Toast.makeText(this, getString(R.string.right_answer_confirmation), Toast.LENGTH_SHORT).show();
             setContentView(R.layout.question_drone);
         } else {
@@ -70,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method checks answer for question_drone and renders question_linden.xml
+     * This method checks answer for question_drone, updates the score and renders question_linden.xml
      * This method is called when 'Submit Answer' button is clicked.
      */
     public void answerQuestionDrone(View view) {
@@ -79,7 +86,8 @@ public class MainActivity extends AppCompatActivity {
         String drone = droneField.getText().toString();
         //Check if answer is correct.
         if (drone.equalsIgnoreCase("drone")) {
-            //Display proper Toast and render xml for next question if answer is correct.
+            //Display proper Toast, update the score and render xml for next question if answer is correct.
+            score +=1;
             Toast.makeText(this, getString(R.string.right_answer_confirmation), Toast.LENGTH_SHORT).show();
             setContentView(R.layout.question_linden);
         } else {
@@ -90,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * This method checks answer for question_linden and renders question_body_parts.xml
+     * This method checks answer for question_linden, updates the score and renders question_body_parts.xml
      * This method is called when 'Submit Answer' button is clicked.
      */
     public void answerQuestionLinden(View view) {
@@ -98,7 +106,8 @@ public class MainActivity extends AppCompatActivity {
         RadioButton lindenRadioButton = (RadioButton) findViewById(linden_radio_button);
         //Find out if user chose the right answer by checking this RadioButton
         if (lindenRadioButton.isChecked()) {
-            //Display proper Toast and render xml for next question if answer is correct.
+            //Display proper Toast, update the score and render xml for next question if answer is correct.
+            score +=1;
             Toast.makeText(this, getString(R.string.right_answer_confirmation), Toast.LENGTH_SHORT).show();
             setContentView(R.layout.question_body_parts);
         } else {
@@ -109,17 +118,20 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * This method checks answer for question_body_parts and renders end.xml
+     * This method checks answer for question_body_parts, updates the score and renders end.xml
      * This method is called when 'Submit Answer' button is clicked.
      */
     public void answerQuestionBodyParts(View view) {
         //Find proper CheckBoxes by their IDs
         CheckBox rightBodyPartsCheckBox1 = (CheckBox) findViewById(right_body_parts_1);
         CheckBox rightBodyPartsCheckBox2 = (CheckBox) findViewById(right_body_parts_2);
-        //Find out if user chose the right answer by checking those CheckBoxes
-        if (rightBodyPartsCheckBox1.isChecked() && rightBodyPartsCheckBox2.isChecked()) {
-            //Display proper Toast and render next xml.
-            Toast.makeText(this, getString(R.string.right_answer_confirmation), Toast.LENGTH_SHORT).show();
+        CheckBox wrongBodyPartsCheckBox1 = (CheckBox) findViewById(wrong_body_parts_1);
+        CheckBox wrongBodyPartsCheckBox2 = (CheckBox) findViewById(wrong_body_parts_2);
+        //Find out if user chose the right answer by checking only two proper CheckBoxes
+        if (rightBodyPartsCheckBox1.isChecked() && rightBodyPartsCheckBox2.isChecked() && !wrongBodyPartsCheckBox1.isChecked() && !wrongBodyPartsCheckBox2.isChecked()) {
+            //Update the score, display proper Toast with total score and render next xml.
+            score +=1;
+            Toast.makeText(this, getString(R.string.right_answer_confirmation) + " Your total score is: " + score + " / 5", Toast.LENGTH_SHORT).show();
             setContentView(R.layout.end);
         } else {
             //Display proper Toast if answer is incorrect.
@@ -132,21 +144,27 @@ public class MainActivity extends AppCompatActivity {
      */
     public void goToQuestionQueen(View view) {
         setContentView(R.layout.question_queen);
+        Toast.makeText(this, getString(R.string.skip_information), Toast.LENGTH_SHORT).show();
     }
 
     public void goToQuestionDrone(View view) {
         setContentView(R.layout.question_drone);
+        Toast.makeText(this, getString(R.string.skip_information), Toast.LENGTH_SHORT).show();
     }
 
     public void goToQuestionLinden(View view) {
         setContentView(R.layout.question_linden);
+        Toast.makeText(this, getString(R.string.skip_information), Toast.LENGTH_SHORT).show();
     }
 
     public void goToQuestionBodyParts(View view) {
         setContentView(R.layout.question_body_parts);
+        Toast.makeText(this, getString(R.string.skip_information), Toast.LENGTH_SHORT).show();
     }
 
+    //This method additionally shows total score
     public void goToEnd(View view) {
         setContentView(R.layout.end);
+        Toast.makeText(this, getString(R.string.skip_information) + " Your total score is: " + score + " / 5", Toast.LENGTH_SHORT).show();
     }
 }
